@@ -31,7 +31,8 @@ class Rps < Sinatra::Base
   end
 
   get '/result' do
-    @choice = session[:choice]
+    choice = session[:choice]
+    @result = Game.new.rock_result
     erb(:result)
   end
 
